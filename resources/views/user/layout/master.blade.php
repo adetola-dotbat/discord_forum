@@ -15,33 +15,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href=" {{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
 
     <!-- Css -->
-    <link href=" {{ asset('assets/libs/tiny-slider/tiny-slider.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/libs/tiny-slider/tiny-slider.css') }}" rel="stylesheet" />
     <!-- Main Css -->
-    <link href=" {{ asset('assets/libs/%40iconscout/unicons/css/line.css') }}" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href=" {{ asset('assets/css/icons.css') }}" />
-    <link rel="stylesheet" href=" {{ asset('assets/css/tailwind.css') }}" />
+    <link href="{{ asset('assets/libs/%40iconscout/unicons/css/line.css') }}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.css') }}" />
 
+    @stack('style')
 </head>
 
-<body class="font-nunito text-base text-black">
-    <!-- Loader Start -->
+<body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
 
     <!-- Start Navbar -->
     @include('user.inc.nav')
     <!--end header-->
     <!-- End Navbar -->
 
-    <!-- Start -->
     @yield('content')
-    <!-- End -->
 
     <!-- Footer Start -->
     @include('user.inc.footer')
+
     <!--end footer-->
     <!-- Footer End -->
+
 
     <!-- Back to top -->
     <a href="#" onclick="topFunction()" id="back-to-top"
@@ -49,26 +49,19 @@
             class="uil uil-arrow-up"></i></a>
     <!-- Back to top -->
 
-    <!-- LTR & RTL Mode Code -->
-    <div class="fixed top-[40%] -right-3 z-50">
-        <a href="#" id="switchRtl">
-            <span
-                class="py-1 px-3 relative inline-block rounded-t-md -rotate-90 bg-white shadow-md font-bold rtl:block ltr:hidden">LTR</span>
-            <span
-                class="py-1 px-3 relative inline-block rounded-t-md -rotate-90 bg-white shadow-md font-bold ltr:block rtl:hidden">RTL</span>
-        </a>
-    </div>
-    <!-- LTR & RTL Mode Code -->
+
 
     <!-- JAVASCRIPTS -->
-    <script src="assets/libs/jarallax/jarallax.min.js"></script>
-    <script src="assets/libs/tiny-slider/min/tiny-slider.js"></script>
-    <script src="assets/libs/feather-icons/feather.min.js"></script>
-    <script src="assets/js/plugins.init.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/libs/jarallax/jarallax.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/tiny-slider/min/tiny-slider.js') }}"></script>
+    <script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins.init.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    @stack('script')
     <!-- JAVASCRIPTS -->
 </body>
-
-<!-- Mirrored from shreethemes.in/techwind/layouts/index-forums.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 23 May 2023 13:35:33 GMT -->
 
 </html>

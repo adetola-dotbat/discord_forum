@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Str;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,5 +19,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $tag = fake()->word();
+        $slug = Str::slug($tag, '-');
+        \App\Models\Tag::factory(1)->create([
+            'tag' => $tag,
+            'slug' => $slug,
+        ]);
     }
 }
