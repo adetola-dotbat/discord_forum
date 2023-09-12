@@ -10,34 +10,13 @@
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
-                        Techwind. Design with
-                        <i class="mdi mdi-heart text-red-600"></i> by
-                        <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.
+                        Computer Science Discord with
+                        <i class="mdi mdi-heart text-red-600"></i>
+                        <a href="https://www.federalpolyilaro.edu.ng/" target="_blank" class="text-reset">The Federal
+                            Polytechnic, Ilaro</a>.
                     </p>
                 </div>
 
-                <ul class="list-none ltr:md:text-right rtl:md:text-left text-center mt-6 md:mt-0">
-                    <li class="inline">
-                        <a href="#"><img src="assets/images/payments/american-ex.png" class="max-h-6 inline"
-                                title="American Express" alt="" /></a>
-                    </li>
-                    <li class="inline">
-                        <a href="#"><img src="assets/images/payments/discover.png" class="max-h-6 inline"
-                                title="Discover" alt="" /></a>
-                    </li>
-                    <li class="inline">
-                        <a href="#"><img src="assets/images/payments/master-card.png" class="max-h-6 inline"
-                                title="Master Card" alt="" /></a>
-                    </li>
-                    <li class="inline">
-                        <a href="#"><img src="assets/images/payments/paypal.png" class="max-h-6 inline"
-                                title="Paypal" alt="" /></a>
-                    </li>
-                    <li class="inline">
-                        <a href="#"><img src="assets/images/payments/visa.png" class="max-h-6 inline"
-                                title="Visa" alt="" /></a>
-                    </li>
-                </ul>
             </div>
             <!--end grid-->
         </div>

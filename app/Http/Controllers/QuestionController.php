@@ -56,4 +56,13 @@ class QuestionController extends Controller
         $answers = $this->answer->where('question_id', $question->id)->get();
         return view('user.pages.question-details', compact('tags', 'question', 'answers'));
     }
+
+    public function search(Request $request)
+    {
+        $tags =  $this->tag->get();
+        $search_value = $request->search;
+        $questions = $this->question::whereRaw("CONCAT_WS(' ', title, question, content) like ?", ['%' . $search_value . '%'])->get();
+        // return redirect()->back()->with($questions, 'question');
+        return view('user.pages.home', compact('tags', 'questions'));
+    }
 }

@@ -51,12 +51,10 @@
                                                     class="h-10 rounded-full shadow dark:shadow-slate-800" alt="" />
 
                                                 <div class="ms-2">
-                                                    <a href="#"
-                                                        class="hover:text-indigo-600 font-semibold">{{ $question->user->name }}
-                                                        Carlo</a>
-                                                    <p class="text-slate-400 text-sm font-normal">
-                                                        <i class="uil uil-clock"></i> May 2022
-                                                    </p>
+                                                    <a href="#" {{-- class="hover:text-indigo-600 font-semibold">{{ $question->user->name }} --}} Carlo</a>
+                                                        <p class="text-slate-400 text-sm font-normal">
+                                                            <i class="uil uil-clock"></i> May 2022
+                                                        </p>
                                                 </div>
                                             </div>
                                         </td>

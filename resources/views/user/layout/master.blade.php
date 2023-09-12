@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Techwind - Tailwind CSS Multipurpose Landing Page Template</title>
+    <title>Computer Science Discord</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Tailwind CSS Saas & Software Landing Page Template" />
     <meta name="keywords"

@@ -57,19 +57,16 @@
                                         <div class="ms-3 flex-1">
                                             <a href=""
                                                 class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">{{ $answer->user->name }}</a>
-                                            <p class="text-sm text-slate-400">{{ $created_at }}</p>
+                                            <p class="text-sm text-slate-400">{{ $answer->created_at }}</p>
                                         </div>
                                     </div>
-
-                                    <a href=""
-                                        class="text-slate-400 hover:text-indigo-600 transition-all duration-500 ease-in-out ms-5"><i
-                                            class="mdi mdi-reply"></i> Reply</a>
                                 </div>
                                 <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                                    <p class="text-slate-400 italic">" There are many variations of passages of Lorem Ipsum
-                                        available, but the majority have suffered alteration in some form, by injected
-                                        humour "
-                                    </p>
+                                    <pre>
+                                        <code style="background-color: transparent; overflow:auto; height: 20rem;">
+                                            {!! utf8_encode($answer->content) !!}
+                                        </code>
+                                    </pre>
                                 </div>
                             </div>
                         @endforeach
@@ -94,9 +91,7 @@
                                                 </path>
                                             </svg>
                                             <input type="hidden" value="{{ $question->id }}" name="question_id">
-                                            <textarea name="content" id="comments"
-                                                class="form-input ps-11 w-full py-2 px-3 h-28 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
-                                                placeholder="Your answer :"></textarea>
+                                            <textarea style="background-color: transparent" name="content" id="comments" placeholder="Your answer :"></textarea>
                                         </div>
                                     </div>
                                 </div>

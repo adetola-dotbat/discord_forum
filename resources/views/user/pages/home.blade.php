@@ -14,8 +14,8 @@
                 </p>
 
                 <div class="subcribe-form mt-6">
-                    <form class="relative max-w-xl mx-auto">
-                        <input type="text" id="SearchForumKeyword" name="text"
+                    <form action="{{ route('search.question') }}" class="relative max-w-xl mx-auto">
+                        <input type="text" id="SearchForumKeyword" name="search"
                             class="pt-4 pe-14 pb-4 ps-6 w-full h-[50px] outline-none text-black dark:text-white rounded-full bg-white dark:bg-slate-900 shadow dark:shadow-gray-800"
                             placeholder="Enter your keywords :" />
                         <button type="submit"
@@ -52,9 +52,9 @@
                                 </h3>
 
                                 <p class="text-slate-400 max-w-xl">
-                                    Talk about anything that's on your mind and see what others
+                                    Talk about anything that's in your code and see what others
                                     think. As a guest to our forum you are only able to view
-                                    posts. When you register with the Forumix forum you can join
+                                    posts. When you register with our forum you can join
                                     in with topics, start new topics and generally be a part of
                                     the first level of our community.
                                 </p>
@@ -72,7 +72,9 @@
             <!--end grid-->
         </div>
         <!--end container-->
-
+        {{-- @foreach ($question as $item)
+            <h4>$item->title</h4>
+        @endforeach --}}
         <div class="container md:mt-24 mt-16">
             <div class="grid lg:grid-cols-12 grid-cols-1 gap-[30px]">
                 <div class="lg:col-span-8">
@@ -119,8 +121,8 @@
                                                     class="h-10 rounded-full shadow dark:shadow-slate-800" alt="" />
 
                                                 <div class="ms-2">
-                                                    <a href="#"
-                                                        class="hover:text-indigo-600 font-semibold">{{ $question->user->name }}
+                                                    <a href="#" class="hover:text-indigo-600 font-semibold">
+                                                        {{-- {{ $question->user->name }} --}}
                                                         Carlo</a>
                                                     <p class="text-slate-400 text-sm font-normal">
                                                         <i class="uil uil-clock"></i> May 2022
