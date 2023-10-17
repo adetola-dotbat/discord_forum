@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
-        if (auth()->user()->role == RoleEnum::ADMIN) {
+        if ($user->role == RoleEnum::ADMIN) {
             Auth::login($user);
             return redirect(RouteServiceProvider::ADMIN);
         } else {

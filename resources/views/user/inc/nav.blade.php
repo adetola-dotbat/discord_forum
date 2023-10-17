@@ -61,15 +61,12 @@
                     </ul>
                 </li>
                 <li class="has-submenu parent-menu-item">
-                    <a href="javascript:void(0)">Docs</a><span class="menu-arrow"></span>
+                    <a href="javascript:void(0)">Community</a><span class="menu-arrow"></span>
                     <ul class="submenu ">
                         <li>
-                            <a href="documentation.html" class="sub-menu-item">Documentation</a>
+                            <a href="documentation.html" class="sub-menu-item">Join Community</a>
                         </li>
-                        <li>
-                            <a href="changelog.html" class="sub-menu-item">Changelog</a>
-                        </li>
-                        <li><a href="widget.html" class="sub-menu-item">Widget</a></li>
+
                     </ul>
                 </li>
             </ul>

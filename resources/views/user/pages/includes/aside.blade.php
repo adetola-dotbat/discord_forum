@@ -55,17 +55,12 @@
 
         @foreach ($tags as $item)
             <li class="inline-block m-2">
-                @if (Route::is('/home') or Route::is('/'))
-                    <a href="{{ route('home', ['slug' => $item->slug]) }}"
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out">{{ $item->tag }}</a>
-                @else
-                    <a href="{{ route('questions', ['slug' => $item->slug]) }}"
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out">{{ $item->tag }}</a>
-                @endif
 
-
+                <a href="{{ route('home', ['slug' => $item->slug]) }}"
+                    class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out">{{ $item->tag }}</a>
             </li>
         @endforeach
+
 
     </ul>
 

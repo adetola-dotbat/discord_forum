@@ -8,31 +8,32 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $tags = $this->tag->get();
         $tag = $request->query('slug');
         if ($tag) {
             $tag = $this->tag->where('slug', $tag)->first();
-            // dd($tag);
-            $questions = $this->questionTag->where('tag_id', $tag->id)->orderBy('id', 'desc')->with('question')->get();
+            $questionWithTags = $this->questionTag->where('tag_id', $tag->id)->orderBy('id', 'desc')->with('question')->paginate(5);
+            // dd($questions);
+            return view('user.pages.home', compact('tags', 'questionWithTags'));
         } else {
-            $questions =  $this->question->orderBy('id', 'desc')->get();
+            $questions =  $this->question->orderBy('id', 'desc')->paginate(8);
+            return view('user.pages.home', compact('tags', 'questions'));
         }
-        $tags = $this->tag->get();
-
-        return view('user.pages.home', compact('tags', 'questions'));
     }
 
     public function questions(Request $request)
     {
+        $tags = $this->tag->get();
         $tag = $request->query('slug');
         if ($tag) {
             $tag = $this->tag->where('slug', $tag)->first();
-            // dd($tag);
-            $questions = $this->questionTag->where('tag_id', $tag->id)->orderBy('id', 'desc')->with('question')->get();
+            $questionWithTags = $this->questionTag->where('tag_id', $tag->id)->orderBy('id', 'desc')->with('question')->paginate(5);
+            // dd($questions);
+            return view('user.pages.questions', compact('tags', 'questionWithTags'));
         } else {
-            $questions =  $this->question->orderBy('id', 'desc')->get();
+            $questions =  $this->question->orderBy('id', 'desc')->paginate(8);
+            return view('user.pages.questions', compact('tags', 'questions'));
         }
-        $tags = $this->tag->get();
-        return view('user.pages.questions', compact('tags', 'questions'));
     }
 
     public function ask()

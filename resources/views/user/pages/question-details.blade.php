@@ -51,8 +51,8 @@
                             <div class="mt-8">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
-                                        <img src="assets/images/client/01.jpg" class="h-11 w-11 rounded-full shadow"
-                                            alt="">
+                                        <img src="{{ asset('assets/images/client/01.jpg') }}"
+                                            class="h-11 w-11 rounded-full shadow" alt="">
 
                                         <div class="ms-3 flex-1">
                                             <a href=""
@@ -62,11 +62,11 @@
                                     </div>
                                 </div>
                                 <div class="p-4 bg-gray-50 dark:bg-slate-800 rounded-md shadow dark:shadow-gray-800 mt-6">
-                                    <pre>
-                                        <code style="background-color: transparent; overflow:auto; height: 20rem;">
-                                            {!! utf8_encode($answer->content) !!}
-                                        </code>
-                                    </pre>
+                                    <pre style="tab-size: 0;">
+<code class="" style="background-color: transparent; overflow:auto; height: auto;">
+{!! utf8_encode(trim($answer->content)) !!}
+</code>
+</pre>
                                 </div>
                             </div>
                         @endforeach

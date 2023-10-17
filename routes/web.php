@@ -26,7 +26,7 @@ Route::get('/question/details/{question}', [QuestionController::class, 'question
 Route::get('/question/search', [QuestionController::class, 'search'])->name('search.question');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/ask', [HomeController::class, 'ask'])->name('ask');
     Route::post('/question', [QuestionController::class, 'question'])->name('question');
     Route::get('/question/edit/{question}', [QuestionController::class, 'editQuestion'])->name('edit.question');
