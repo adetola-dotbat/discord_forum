@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AdminController, AnswerController, HomeController, PostController, ProfileController, QuestionController};
+use App\Http\Controllers\{AdminController, AnswerController, ArticleController, HomeController, PostController, ProfileController, ProvisionServer, QuestionController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,32 +26,30 @@ Route::get('/question/details/{question}', [QuestionController::class, 'question
 Route::get('/question/search', [QuestionController::class, 'search'])->name('search.question');
 
 Route::group(['middleware' => ['auth']], function () {
-    // Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/ask', [HomeController::class, 'ask'])->name('ask');
     Route::post('/question', [QuestionController::class, 'question'])->name('question');
     Route::get('/question/edit/{question}', [QuestionController::class, 'editQuestion'])->name('edit.question');
     Route::post('/question/update/{question}', [QuestionController::class, 'updateQuestion'])->name('update.question');
     Route::get('/questions/mq', [QuestionController::class, 'myQuestions'])->name('view.questions');
     Route::post('/answer', [AnswerController::class, 'answer'])->name('store.answer');
+    Route::get('/communities', [HomeController::class, 'communities'])->name('communities');
+    Route::post('/join-community', [HomeController::class, 'joinCommunity'])->name('join.community');
 
-    // Route::prefix('manuscript')->group(function () {
-    //     Route::get('/', [ManuscriptController::class, 'manuscript'])->name('manuscript');
-    //     Route::post('/store', [ManuscriptController::class, 'store'])->name('store.manuscript');
-    //     Route::get('/edit/{manuscript}', [ManuscriptController::class, 'edit'])->name('edit.manuscript');
-    //     Route::get('/update/{manuscript}', [ManuscriptController::class, 'update'])->name('update.manuscript');
-    //     Route::get('/delete/{manuscript}', [ManuscriptController::class, 'delete'])->name('delete.manuscript');
-    // });
+
 
     Route::group(['middleware' => ['is_admin']], function () {
         Route::get('/dashboard', [AdminController::class, 'index']);
+        Route::get('/list-users', [AdminController::class, 'users']);
+        Route::get('/community', [AdminController::class, 'community'])->name('dashboard.community');
+        Route::post('/community', [AdminController::class, 'storeCommunity'])->name('store.community');
+        Route::get('/community/{id}', [AdminController::class, 'deleteCommunity'])->name('delete.community');
+
+        Route::get('/article', [ArticleController::class, 'index'])->name('article');
+        Route::post('/article', [ArticleController::class, 'storeArticle'])->name('store.article');
+        Route::get('/article/{id}', [ArticleController::class, 'deleteArticle'])->name('delete.article');
     });
 });
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/dashboard', [AdminController::class, 'index']);
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

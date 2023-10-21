@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\JoinCommunityRequest;
+use App\Models\Community;
+use App\Models\JoinCommunity;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -50,5 +53,18 @@ class HomeController extends Controller
         $questions = $this->questionTag->where('tag_id', $tag->id)->with('question')->get();
         // dd($questions);
         return view('user.pages.home', compact('tags', 'questions'));
+    }
+
+    public function communities()
+    {
+        $communities = Community::get();
+        return view('user.pages.community', compact('communities'));
+    }
+
+    public function joinCommunity(JoinCommunityRequest $request)
+    {
+        // dd($request);
+        $joinCommunity = JoinCommunity::create($request->validated());
+        return redirect()->back();
     }
 }

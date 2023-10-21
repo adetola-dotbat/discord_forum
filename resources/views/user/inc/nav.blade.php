@@ -64,7 +64,7 @@
                     <a href="javascript:void(0)">Community</a><span class="menu-arrow"></span>
                     <ul class="submenu ">
                         <li>
-                            <a href="documentation.html" class="sub-menu-item">Join Community</a>
+                            <a href="{{ route('communities') }}" class="sub-menu-item">Join Community</a>
                         </li>
 
                     </ul>
